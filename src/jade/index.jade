@@ -8,6 +8,25 @@ html
     include ./_header.jade
     
     block content
+      nav.navbar.navbar-light.bg-faded
+        
+        a.navbar-brand(href='#') Navbar
+        
+        ul.nav.navbar-nav
+          li.nav-item.active
+            a.nav-link(href='#') Home 
+            span.sr-only (current)
+          li.nav-item
+            a.nav-link(href='#') Features
+          li.nav-item
+            a.nav-link(href='#') Pricing
+          li.nav-item
+            a.nav-link(href='#') About
+        
+        form.form-inline.navbar-form.pull-right
+          input.form-control(type='text', placeholder='Search')
+          button.btn.btn-success-outline(type='submit') Search
+      
       .jumbotron
         h1.display-3 Hello, world!
         p.lead This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
