@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title My title
+  body
+    include ./_header.jade
+    
+    block content
+      p This is a random page template.
+      a.btn This is my btn
+    
+    include ./_footer.jade
+
+  script(src="js/index.js")
