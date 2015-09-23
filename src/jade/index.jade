@@ -2,13 +2,39 @@ doctype html
 html
   head
     title My title
+    
+    link(href="css/styles.css", rel="stylesheet")
   body
     include ./_header.jade
     
     block content
-      p This is a random page template.
-      a.btn This is my btn
+      nav.navbar.navbar-light.bg-faded
+        
+        a.navbar-brand(href='#') Navbar
+        
+        ul.nav.navbar-nav
+          li.nav-item.active
+            a.nav-link(href='#') Home 
+            span.sr-only (current)
+          li.nav-item
+            a.nav-link(href='#') Features
+          li.nav-item
+            a.nav-link(href='#') Pricing
+          li.nav-item
+            a.nav-link(href='#') About
+        
+        form.form-inline.navbar-form.pull-right
+          input.form-control(type='text', placeholder='Search')
+          button.btn.btn-success-outline(type='submit') Search
+      
+      .jumbotron
+        h1.display-3 Hello, world!
+        p.lead This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
+        hr.m-y-md
+        p It uses utility classes for typography and spacing to space content out within the larger container.
+        p.lead
+          a.btn.btn-primary.btn-lg(href="#", role="button") Learn more
     
     include ./_footer.jade
 
-  script(src="js/index.js")
+    script(src="js/index.js")
