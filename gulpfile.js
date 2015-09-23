@@ -7,7 +7,8 @@ var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var imgMin = require('gulp-imagemin');
 var rename = require('gulp-rename');
-
+var path = require('path');
+var bootstrap = path.resolve(__dirname, 'node_modules/bootstrap-sass/assets/stylesheets');
 
 var paths = {
   sass: './src/styles/**/*.scss',
@@ -31,7 +32,8 @@ gulp.task('clean', function() {
 gulp.task('sass', function() {
   return gulp.src(paths.sass)
     .pipe(sass({
-      outputStyle: 'expanded'
+      outputStyle: 'expanded',
+      includePaths: [bootstrap]
     }))
     .pipe(gulp.dest(paths.output.css));
 });
